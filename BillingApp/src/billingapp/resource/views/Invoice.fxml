@@ -26,7 +26,7 @@
                          <fx:define>
                              <ToggleGroup fx:id="newOrEditToggle" />
                              <ToggleGroup fx:id="cashOrCreditToggle" />
-                             <Double fx:id="maxDouble" fx:constant="MAX_VALUE" /> 
+                                 <Double fx:id="maxDouble" fx:constant="MAX_VALUE" /> 
                          </fx:define>
                          <top>
                              <VBox spacing="8.0" styleClass="parent">
@@ -50,13 +50,13 @@
                                            </HBox>
                                            <VBox alignment="TOP_RIGHT" spacing="8.0" styleClass="parent" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
                                               <children>
-                                                  <HBox alignment="TOP_RIGHT" spacing="10.0" styleClass="parent">
+                                                  <!--<HBox alignment="TOP_RIGHT" spacing="10.0" styleClass="parent">
                                                      <children>
                                                          <Label styleClass="nodeLabel" text="Invoice Type:" />
                                                          <RadioButton fx:id="cashInvoice" selected="true" text="Cash" toggleGroup="$cashOrCreditToggle" />
                                                          <RadioButton fx:id="creditInvoice" text="Credit" toggleGroup="$cashOrCreditToggle" />
                                                      </children>
-                                                  </HBox>
+                                                  </HBox> -->
                                                   <HBox fx:id="customersContainer" managed="false" spacing="10.0" styleClass="parent" visible="false">
                                                      <children>
                                                          <Label styleClass="nodeLabel" text="Customer:" />
@@ -181,11 +181,11 @@
                                                                           <Label fx:id="placeholderText" text="&lt; No Item Added &gt;" />
                                                                       </placeholder>
                                                                   </TableView> 
-                                                                  <ImageView fx:id="checkImage" opacity="0">
+                                                                  <!-- <ImageView fx:id="checkImage" opacity="0">
                                                                       <image>
-                                                                          <!-- <Image url="/resources/images/check.png" /> -->
+                                                                           <Image url="/resources/images/check.png" /> 
                                                                       </image>
-                                                                  </ImageView>
+                                                                  </ImageView> -->
                                                               </children>
                                                            </StackPane>
                                                            <Label fx:id="lblNoItemError" managed="false" styleClass="errorLabel" visible="false" />
@@ -197,42 +197,42 @@
                                                               <children>
                                                                   <HBox spacing="15.0" styleClass="parent" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                      <children>
-                                                                         <Button fx:id="btnRefreshCustomers" onAction="#onCustomersRefreshAction" styleClass="graphicButton">
+                                                                         <!-- <Button fx:id="btnRefreshCustomers" onAction="#onCustomersRefreshAction" styleClass="graphicButton">
                                                                              <graphic>
-                                                                                 <ImageView>
+                                                                                  <ImageView>
                                                                                      <image>
-                                                                                         <!-- <Image url="/resources/images/refresh_customer.png" /> -->
+                                                                                          <Image url="/resources/images/refresh_customer.png" /> 
                                                                                      </image>
-                                                                                 </ImageView>
+                                                                                 </ImageView> 
                                                                              </graphic>
                                                                              <tooltip>
                                                                                  <Tooltip text="Refresh Customers List" />
                                                                              </tooltip>
-                                                                         </Button>
-                                                                         <Button fx:id="btnRefreshItems" onAction="#onItemsRefreshAction" styleClass="graphicButton">
-                                                                             <graphic>
-                                                                                 <ImageView>
+                                                                         </Button> -->
+                                                                         <!-- <Button fx:id="btnRefreshItems" onAction="#onItemsRefreshAction" styleClass="graphicButton">
+                                                                              <graphic>
+                                                                                  <ImageView>
                                                                                      <image>
-                                                                                        <!-- <Image url="/resources/images/refresh_item.png" /> -->
+                                                                                         <Image url="/resources/images/refresh_item.png" /> 
                                                                                      </image>
-                                                                                 </ImageView>
-                                                                             </graphic>
+                                                                                 </ImageView> 
+                                                                             </graphic> 
                                                                              <tooltip>
                                                                                  <Tooltip text="Refresh Items List" />
                                                                              </tooltip>
-                                                                         </Button>
-                                                                         <Button fx:id="btnRefreshUnits" onAction="#onUnitsRefreshAction" styleClass="graphicButton">
+                                                                         </Button> -->
+                                                                         <!--  <Button fx:id="btnRefreshUnits" onAction="#onUnitsRefreshAction" styleClass="graphicButton">
                                                                              <graphic>
                                                                                  <ImageView>
                                                                                      <image>
-                                                                                         <!-- <Image url="/resources/images/refresh_measurement_unit.png" /> -->
+                                                                                         <Image url="/resources/images/refresh_measurement_unit.png" /> 
                                                                                      </image>
                                                                                  </ImageView>
                                                                              </graphic>
                                                                              <tooltip>
                                                                                  <Tooltip text="Refresh Measurement Units List" />
                                                                              </tooltip>
-                                                                         </Button>
+                                                                         </Button> -->
                                                                      </children>
                                                                   </HBox>
                                                           
