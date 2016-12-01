@@ -125,6 +125,7 @@ public class MainController  {
         tab.setContent(rootPane);
         tab.setText(title);
         setContextMenu(tab);
+        tab.setClosable(true);
 
         tab.setOnCloseRequest((Event event1) -> {
             if (!controller.shouldClose()) {

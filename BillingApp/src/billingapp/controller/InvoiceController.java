@@ -5,14 +5,20 @@
  */
 package billingapp.controller;
 
+import billingapp.model.Item;
 import billingapp.utility.TabContent;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.controlsfx.control.textfield.AutoCompletionBinding;
+import org.controlsfx.control.textfield.TextFields;
 
 /**
  * FXML Controller class
@@ -23,6 +29,12 @@ public class InvoiceController implements TabContent {
 
     private Stage mainWindow;
     private TabPane tabPane;
+    
+    @FXML
+    private TextField tfItem;
+    
+    private List<Item> items = null;
+    private AutoCompletionBinding<Item> itemCompletion = null;
     
     @FXML
     private void onInvoiceItemAddAction(ActionEvent event) {
@@ -71,7 +83,7 @@ public class InvoiceController implements TabContent {
 
     @Override
     public boolean loadData() {
-        return true;
+        return loadItems();
     }
 
     @Override
@@ -83,6 +95,53 @@ public class InvoiceController implements TabContent {
     public void setTabPane(TabPane tabPane) {
         this.tabPane = tabPane;
     }
+    
+    private boolean loadItems() {
+
+        try {
+            items = getItems();
+        } catch (Exception e) {
+            /*String message = Utility.getDataFetchErrorText();
+            Alert alert = Utility.getErrorAlert("Error Occurred",
+                    "Error in Fetching Items", message, mainWindow);
+            Utility.beep();
+            alert.showAndWait();*/
+            return false;
+        }
+
+        if (itemCompletion != null) {
+            itemCompletion.dispose();
+        }
+        
+        itemCompletion = TextFields.<Item>bindAutoCompletion(tfItem, items);
+        return true;
+
+    }
+       
+    private List<Item> getItems(){
+        List<Item> itemsLocal = new ArrayList<>();
+        {
+            Item item = new Item();
+            item.setItemId(1);
+            item.setItemName("Ganapathi pooja");
+            itemsLocal.add(item);
+        }
+        {
+            Item item = new Item();
+            item.setItemId(2);
+            item.setItemName("Payasam");
+            itemsLocal.add(item);
+        }
+        {
+            Item item = new Item();
+            item.setItemId(2);
+            item.setItemName("Archana");
+            itemsLocal.add(item);
+        }
+        
+        return itemsLocal;
+    }   
+
 
     
 }
