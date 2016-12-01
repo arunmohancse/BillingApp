@@ -67,6 +67,11 @@ public class MainController  {
         addTab("Invoice", "New Invoice");
     }
     
+    @FXML
+    private void onNewExpenseDialogAction(ActionEvent event) {
+        addTab("Expense", "Expenses");
+    }
+    
     private void addTab(final String fxmlFileName, final String title) {
 
         final String KEY = "fxml";

@@ -17,6 +17,7 @@
                 <Menu mnemonicParsing="false" text="File">
                   <items>
                       <MenuItem mnemonicParsing="false" onAction="#onNewBillDialogAction" text="New Invoice" />
+                        <MenuItem mnemonicParsing="false" onAction="#onNewExpenseDialogAction" text="Expense" />
                       <MenuItem mnemonicParsing="false" text="Close" />
                   </items>
                 </Menu>
@@ -39,7 +40,7 @@
             </TabPane>
          </center>
          <left>
-             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: F5DEB3;" >
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: F5DEB3;">
                <children>
                   <ImageView fx:id="leftImageView" fitHeight="341.0" fitWidth="200.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                        
